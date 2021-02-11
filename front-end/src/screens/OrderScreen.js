@@ -12,7 +12,7 @@ import {ORDER_PAY_RESET, ORDER_DELIVER_RESET, ORDER_PAY_MERCADOPAGO_RESET} from 
 const OrderScreen = ({match, history, location}) => {
     let orderId = match.params.id;
    
-    console.log(match)
+    
     const dispatch = useDispatch();
 
     const orderDetails = useSelector(state => state.orderDetails);
@@ -35,7 +35,7 @@ const OrderScreen = ({match, history, location}) => {
             external_reference: match.external_reference,
             merchant_order_id: match.merchant_order_id
         }
-        console.log(mercadPagoResponse)
+        
     }
     
 

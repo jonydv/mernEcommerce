@@ -43,16 +43,16 @@ preference = {
       
     },
     back_urls:{
-      success: `http://localhost:5000/api/pay/mercadopago`,
-      failure: `http://localhost:3000`,
-      pending: `http://localhost:3000/login`
+      success: `https://mern-ecommerce-mp.herokuapp.com/api/pay/mercadopago`,
+      failure: `https://mern-ecommerce-mp.herokuapp.com/`,
+      pending: `https://mern-ecommerce-mp.herokuapp.com/login`
     },
     //
-    auto_return: 'all',
+    auto_return: 'approved',
     statement_descriptor: 'ProShop',
     external_reference: order._id,
     binary_mode: true,
-    notification_url:`https://cokiwh3649.loca.lt/api/pay/webhook`,    
+    notification_url:`https://mern-ecommerce-mp.herokuapp.com/api/pay/webhook`,    
     
   };
 
