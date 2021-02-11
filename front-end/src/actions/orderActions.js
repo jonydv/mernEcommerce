@@ -259,7 +259,7 @@ export const payOrderMercadoPago = (order) => async(dispatch, getState) => {
         }
 
         const {data} = await Axios.post(
-            `http://localhost:5000/api/pay/mercadopago`,order, config);
+            `https://mern-ecommerce-mp.herokuapp.com/api/pay/mercadopago`,order, config);
 
         dispatch({
             type: ORDER_PAY_MERCADOPAGO_SUCCESS,

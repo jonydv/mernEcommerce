@@ -100,7 +100,7 @@ const getMercadoPagoPaymentStatus = asyncHandler(async(req, res) => {
       };
       
       await order.save();
-      res.redirect(`http://localhost:3000/order/${paymentInfo.external_reference}`)
+      res.redirect(`https://mern-ecommerce-mp.herokuapp.com/order/${paymentInfo.external_reference}`)
     }
     
     
