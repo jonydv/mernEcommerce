@@ -1,0 +1,37 @@
+{
+  "name": "e-commerce",
+  "version": "1.0.0",
+  "description": "MERN e-commerce",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node back-end/server",
+    "server": "nodemon back-end/server",
+    "client": "npm start --prefix front-end",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
+    "data:import": "node back-end/seeder",
+    "data:destroy": "node back-end/seeder -d",
+    "webhook": "lt -p 5000 -s cokiwh3649",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix front-end && npm run build --prefix front-end"
+  },
+  "author": "Jonatan Villalba",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "localtunnel": "^2.0.1",
+    "mercadopago": "^1.5.3",
+    "mongoose": "^5.11.8",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+}
