@@ -183,7 +183,7 @@ const OrderScreen = ({match, history, location}) => {
                             <ListGroup.Item>
                             
                                     {order && !order.isPaid && mercadopagoInfo 
-                                    ?(<><a href={mercadopagoInfo.response.init_point} rel='noreferrer' target='_blank'><Button className='btn btn-block'> Pagar</Button></a></>)
+                                    ?(<><a href={mercadopagoInfo.response.init_point} rel='noreferrer' ><Button className='btn btn-block'> Pagar</Button></a></>)
                                     :<Button className='btn btn-block' disabled>Pay Order</Button>}
                                     
                                     
