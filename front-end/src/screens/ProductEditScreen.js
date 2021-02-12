@@ -8,6 +8,7 @@ import { listProductDetails, updateProduct } from '../actions/productActions';
 import FormContainer from '../components/FormContainer';
 import { Link } from 'react-router-dom';
 import { PRODUCT_UPDATE_RESET } from '../constants/productConstants';
+import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
 
 const ProductEditScreen = ({match, history}) => {
 
@@ -73,6 +74,42 @@ const ProductEditScreen = ({match, history}) => {
         const file= e.target.files[0];
         const formData = new FormData();
         formData.append('image', file);
+        formData.append('upload_preset', 'mern-ecommerce');
+        formData.append('cloud_name', 'dqkmhfc1d');
+        setUploading(true);
+        fetch('	https://api.cloudinary.com/v1_1/dqkmhfc1d/image/upload', 
+        {method: 'post',
+        body: formData})
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            setImage(data.url);
+            setUploading(false);
+        }) 
+        .catch(err => {
+            console.log(err);
+            setUploading(false);
+        })     //setUploading(true);
+        /*try{
+            const config = {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            }
+            const { data } = await Axios.post('http://localhost:5000/api/uploads', formData, config);
+
+            setImage(data);
+            setUploading(false)
+        }catch(error){
+            console.error(error);
+            setUploading(false);
+        }*/
+    }
+
+    /*const uploadFileHandler = async(e) => {
+        const file= e.target.files[0];
+        const formData = new FormData();
+        formData.append('image', file);
         setUploading(true);
         try{
             const config = {
@@ -88,7 +125,7 @@ const ProductEditScreen = ({match, history}) => {
             console.error(error);
             setUploading(false);
         }
-    }
+    }*/
 
     return (
             <>
