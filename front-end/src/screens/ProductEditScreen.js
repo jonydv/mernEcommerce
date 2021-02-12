@@ -73,15 +73,15 @@ const ProductEditScreen = ({match, history}) => {
     const uploadFileHandler = async(e) => {
         const file= e.target.files[0];
         console.log(e.target.files);
-        const formData = new FormData();
-        formData.append('image', file);
-        formData.append('upload_preset', 'mern-ecommerce');
-        formData.append('cloud_name', 'dqkmhfc1d');
+        const data = new FormData();
+        data.append('image', file);
+        data.append('upload_preset', 'mern-ecommerce');
+        data.append('cloud_name', 'dqkmhfc1d');
         setUploading(true);
-        console.log(formData);
+        console.log(data);
         fetch('	https://api.cloudinary.com/v1_1/dqkmhfc1d/image/upload', 
         {method: 'post',
-        body: formData})
+        body: data})
         .then(res => res.json())
         .then(data => {
             console.log(data)
