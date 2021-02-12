@@ -71,9 +71,10 @@ const ProductEditScreen = ({match, history}) => {
     }
 
     const uploadFileHandler = async(e) => {
-        //const file= e.target.files[0];
+        const file= e.target.files[0];
+        console.log(e.target.files);
         const formData = new FormData();
-        formData.append('image', image);
+        formData.append('image', file);
         formData.append('upload_preset', 'mern-ecommerce');
         formData.append('cloud_name', 'dqkmhfc1d');
         setUploading(true);
