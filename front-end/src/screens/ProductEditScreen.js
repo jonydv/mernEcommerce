@@ -74,7 +74,7 @@ const ProductEditScreen = ({match, history}) => {
         const file= e.target.files[0];
         console.log(e.target.files);
         const data = new FormData();
-        data.append('image', file);
+        data.append('file', file);
         data.append('upload_preset', 'mern-ecommerce');
         data.append('cloud_name', 'dqkmhfc1d');
         setUploading(true);
