@@ -78,13 +78,11 @@ const ProductEditScreen = ({match, history}) => {
         data.append('upload_preset', 'mern-ecommerce');
         data.append('cloud_name', 'dqkmhfc1d');
         setUploading(true);
-        console.log(data);
         fetch('	https://api.cloudinary.com/v1_1/dqkmhfc1d/image/upload', 
         {method: 'post',
         body: data})
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             setImage(data.url);
             setUploading(false);
         }) 
